@@ -1,7 +1,8 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Tkay's Movie Zone</title>
     <style>
         body {
@@ -11,9 +12,28 @@
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
+            margin: 0;
         }
         h1 {
             font-size: 3em;
+            margin-bottom: 10px;
+        }
+        /* Search bar styling */
+        #searchBar {
+            width: 90%;
+            max-width: 400px;
+            padding: 10px 15px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            border: none;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+            background-color: #1a1a1a;
+            color: white;
+        }
+        #searchBar::placeholder {
+            color: #ff6666;
         }
         .movie {
             background: #1a1a1a;
@@ -23,47 +43,113 @@
             width: 90%;
             max-width: 400px;
             box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+        }
+        .movie:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.9);
         }
         img {
             max-width: 100%;
             border-radius: 10px;
+            user-select: none;
+        }
+        h2 {
+            margin: 15px 0 5px;
+        }
+        .details {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            color: #ff6666;
+        }
+        p {
+            font-size: 1em;
+            margin-bottom: 15px;
         }
         .download-btn {
             display: inline-block;
             margin-top: 10px;
-            padding: 10px 20px;
+            padding: 10px 25px;
             background-color: red;
             color: white;
             text-decoration: none;
             border-radius: 8px;
-            transition: background 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
+            user-select: none;
         }
         .download-btn:hover {
             background-color: #ff1a1a;
+            animation: bounce 0.4s;
+        }
+        /* Bounce animation for buttons */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+        /* Responsive adjustments */
+        @media (max-width: 450px) {
+            h1 {
+                font-size: 2em;
+            }
+            .movie {
+                padding: 15px;
+                width: 95%;
+            }
+            #searchBar {
+                font-size: 1em;
+                padding: 8px 12px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Tkay's Movie Zone</h1><div class="movie">
-    <img src="inception-poster.jpg" alt="Inception">
-    <h2>Inception</h2>
-    <p>A mind-bending thriller about dreams within dreams.</p>
-    <a href="inception-poster.jpg" class="download-btn" download>Download Poster</a>
-</div>
+    <h1>Tkay's Movie Zone</h1>
+    <input type="text" id="searchBar" placeholder="Search movies..." />
 
-<div class="movie">
-    <img src="black-panther-poster.jpg" alt="Black Panther">
-    <h2>Black Panther</h2>
-    <p>A superhero story set in Wakanda.</p>
-    <a href="black-panther-poster.jpg" class="download-btn" download>Download Poster</a>
-</div>
+    <div class="movie" data-title="Inception">
+        <img src="images/inception-poster.jpg" alt="Inception" />
+        <h2>Inception</h2>
+        <div class="details">2010 &bull; Rating: 8.8/10</div>
+        <p>A mind-bending thriller about dreams within dreams.</p>
+        <a href="images/inception-poster.jpg" class="download-btn" download>Download Poster</a>
+    </div>
 
-<div class="movie">
-    <img src="matrix-poster.jpg" alt="The Matrix">
-    <h2>The Matrix</h2>
-    <p>A hacker discovers the world is a simulation.</p>
-    <a href="matrix-poster.jpg" class="download-btn" download>Download Poster</a>
-</div>
+    <div class="movie" data-title="Black Panther">
+        <img src="images/black-panther-poster.jpg" alt="Black Panther" />
+        <h2>Black Panther</h2>
+        <div class="details">2018 &bull; Rating: 7.3/10</div>
+        <p>A superhero story set in Wakanda.</p>
+        <a href="images/black-panther-poster.jpg" class="download-btn" download>Download Poster</a>
+    </div>
 
+    <div class="movie" data-title="The Matrix">
+        <img src="images/matrix-poster.jpg" alt="The Matrix" />
+        <h2>The Matrix</h2>
+        <div class="details">1999 &bull; Rating: 8.7/10</div>
+        <p>A hacker discovers the world is a simulation.</p>
+        <a href="images/matrix-poster.jpg" class="download-btn" download>Download Poster</a>
+    </div>
+
+    <script>
+        // Search functionality to filter movies by title
+        const searchBar = document.getElementById('searchBar');
+        searchBar.addEventListener('input', () => {
+            const query = searchBar.value.toLowerCase();
+            const movies = document.querySelectorAll('.movie');
+            movies.forEach(movie => {
+                const title = movie.getAttribute('data-title').toLowerCase();
+                if (title.includes(query)) {
+                    movie.style.display = 'block';
+                } else {
+                    movie.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
-        </html>
+    </html>
