@@ -1,14 +1,14 @@
 body {
-    background-color: #000; /* Black background */
+    background-color: #000;
     color: #fff;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     text-align: center;
     padding: 20px;
 }
 
 h1 {
-    color: #e50914; /* Netflix-style red */
     margin-bottom: 40px;
+    color: #ff1a1a;
 }
 
 .movie-list {
@@ -19,32 +19,42 @@ h1 {
 }
 
 .movie {
-    background: #1a1a1a; /* Dark gray card */
-    border: 2px solid #e50914;
+    background: #111;
     padding: 20px;
+    border: 2px solid #ff1a1a;
     border-radius: 10px;
     width: 90%;
     max-width: 400px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.movie:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 15px #e50914;
 }
 
 .movie img {
     width: 100%;
     border-radius: 10px;
-    border: 2px solid #333;
 }
 
 .movie h2 {
     margin: 10px 0 5px;
-    color: #fff;
+    color: #ff1a1a;
 }
 
 .movie p {
     font-size: 14px;
-    color: #bbb;
+    color: #ccc;
+}
+
+.download-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff1a1a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #cc0000;
 }
