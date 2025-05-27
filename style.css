@@ -1,40 +1,9 @@
 body {
-    background-color: #121212;
+    background: url('https://wallpapercave.com/wp/wp4622166.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: #fff;
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 20px;
-}
-
-h1 {
-    margin-bottom: 40px;
-}
-
-.movie-list {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-}
-
-.movie {
-    background: #1e1e1e;
-    padding: 20px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 400px;
-}
-
-.movie img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.movie h2 {
-    margin: 10px 0 5px;
-}
-
-.movie p {
-    font-size: 14px;
-    color: #bbb;
+    backdrop-filter: brightness(0.5);
 }
