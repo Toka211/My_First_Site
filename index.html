@@ -1,31 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tkay's Movie Picks</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tkay's Movie Zone</title>
+    <style>
+        body {
+            background-color: #000;
+            background-image: linear-gradient(to bottom right, #000000, #8b0000);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3em;
+        }
+        .movie {
+            background: #1a1a1a;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+        }
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .download-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        .download-btn:hover {
+            background-color: #ff1a1a;
+        }
+    </style>
 </head>
 <body>
-    <h1>Tkay's Top Movies</h1>
-    <div class="movie-list">
-        <div class="movie">
-            <img src="https://m.media-amazon.com/images/I/81drfTT9ZfL._AC_SL1500_.jpg" alt="Inception">
-            <h2>Inception</h2>
-            <p>A mind-bending thriller about dreams within dreams.</p>
-            <a href="https://example.com/inception-download" class="download-btn" target="_blank">Download</a>
-        </div>
-        <div class="movie">
-            <img src="https://m.media-amazon.com/images/I/51k0qaF-p1L._AC_.jpg" alt="Black Panther">
-            <h2>Black Panther</h2>
-            <p>A superhero story set in the powerful African nation of Wakanda.</p>
-            <a href="https://example.com/black-panther-download" class="download-btn" target="_blank">Download</a>
-        </div>
-        <div class="movie">
-            <img src="https://m.media-amazon.com/images/I/71niXI3lxlL._AC_SL1178_.jpg" alt="The Matrix">
-            <h2>The Matrix</h2>
-            <p>A hacker discovers the reality he lives in is a simulation.</p>
-            <a href="https://example.com/matrix-download" class="download-btn" target="_blank">Download</a>
-        </div>
-    </div>
+    <h1>Tkay's Movie Zone</h1><div class="movie">
+    <img src="inception-poster.jpg" alt="Inception">
+    <h2>Inception</h2>
+    <p>A mind-bending thriller about dreams within dreams.</p>
+    <a href="inception-poster.jpg" class="download-btn" download>Download Poster</a>
+</div>
+
+<div class="movie">
+    <img src="black-panther-poster.jpg" alt="Black Panther">
+    <h2>Black Panther</h2>
+    <p>A superhero story set in Wakanda.</p>
+    <a href="black-panther-poster.jpg" class="download-btn" download>Download Poster</a>
+</div>
+
+<div class="movie">
+    <img src="matrix-poster.jpg" alt="The Matrix">
+    <h2>The Matrix</h2>
+    <p>A hacker discovers the world is a simulation.</p>
+    <a href="matrix-poster.jpg" class="download-btn" download>Download Poster</a>
+</div>
+
 </body>
-</html>
+        </html>
